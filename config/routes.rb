@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  scope '/api' do
-    resources :users
-    resources :events
+  # scope '/api' do
+  #   resources :users, :events
+  # end
+
+  namespace 'api' do
+    resources :users, :events
   end
 
+  resources :users, :events
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
